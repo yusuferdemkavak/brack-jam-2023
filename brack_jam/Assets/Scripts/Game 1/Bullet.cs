@@ -17,9 +17,21 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         enemy = hitInfo.GetComponent<Enemy>();
+        Boss boss = hitInfo.GetComponent<Boss>();
         if (enemy != null)
         {
             enemy.TakeDamage(1);
+            Destroy(gameObject);
+        }
+
+        if (boss != null)
+        {
+            boss.TakeDamage(1);
+            Destroy(gameObject);
+        }
+
+        if(hitInfo.gameObject.tag == "Tree")
+        {
             Destroy(gameObject);
         }
     }
