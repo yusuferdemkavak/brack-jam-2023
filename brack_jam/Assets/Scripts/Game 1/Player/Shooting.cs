@@ -7,8 +7,7 @@ public class Shooting : MonoBehaviour
 
     public Transform firePoint;
 
-    public int horizontalShootingDirection = 0;
-    public int verticalShootingDirection = 0;
+    public float fireRate = 0.3f;
     public GameObject bulletPrefab;
 
     public bool isShooting = false;
@@ -42,7 +41,7 @@ public class Shooting : MonoBehaviour
     public IEnumerator ShootingCooldown()
     {
         isShooting = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(fireRate);
         isShooting = false;
     }
 }

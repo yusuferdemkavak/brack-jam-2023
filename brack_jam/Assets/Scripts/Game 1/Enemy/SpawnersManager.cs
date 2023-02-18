@@ -7,9 +7,11 @@ public class SpawnersManager : MonoBehaviour
 {
     public GameObject[] spawners;
     public GameObject[] trees;
-    public Boss boss;
+    public GameObject BossHealthBar;
+    public GameObject breakText;
+    public Boss1 boss;
     public Text timerText;
-    public int secondsLeft = 30;
+    public int secondsLeft = 0;
     public int minutesLeft = 1;
     public int wavecount = 1;
     public bool breakTime = false;
@@ -25,15 +27,6 @@ public class SpawnersManager : MonoBehaviour
     {
         timerText.text = minutesLeft.ToString("00") + ":" + secondsLeft.ToString("00");
 
-        if (wavecount == 3)
-        {
-            boss.gameObject.SetActive(true);
-           for (int k = 0; k < spawners.Length; k++)
-            {
-                trees[k].SetActive(false);
-                Destroy(timerText);
-            }
-        }
 
         if (minutesLeft > 0 && secondsLeft <= 0)
         {
@@ -46,12 +39,12 @@ public class SpawnersManager : MonoBehaviour
             if (breakTime == true)
             {
                 minutesLeft = 1;
-                secondsLeft = 30;
+                secondsLeft = 0;
+                breakText.SetActive(false);
                 for (int k = 0; k < spawners.Length; k++)
                 {
                     spawners[k].SetActive(true);
                     StartCoroutine(spawners[k].GetComponent<EnemySpawner>().SpawnEnemy(Random.Range(j, i)));
-
                 }
                 i -= 2;
                 j -= 1;
@@ -61,11 +54,27 @@ public class SpawnersManager : MonoBehaviour
             else
             {
                 secondsLeft = 10;
+                breakText.SetActive(true);
                 for (int k = 0; k < spawners.Length; k++)
                 {
                     spawners[k].SetActive(false);
                 }
                 breakTime = true;
+            }
+
+            if (wavecount == 3)
+            {
+                boss.gameObject.SetActive(true);
+                BossHealthBar.SetActive(true);
+                Destroy(timerText);
+                for (int k = 0; k < spawners.Length/2; k++)
+                {
+                    Destroy(spawners[k]);
+                }
+                for (int k = 0; k < trees.Length; k++)
+                {
+                    Destroy(trees[k]);
+                }
             }
         }
     }
