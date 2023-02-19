@@ -46,6 +46,7 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: dd78d4b705a1c404683438e134d6b5d2, type: 3}
     - {fileID: 2800000, guid: 4b06a274593bdaa41a5ec7606dc8dd9a, type: 3}
+    - {fileID: 2800000, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -85,6 +86,20 @@ SpriteAtlas:
   - {fileID: 4035501790466999928, guid: dd78d4b705a1c404683438e134d6b5d2, type: 3}
   - {fileID: 8490642196906846815, guid: dd78d4b705a1c404683438e134d6b5d2, type: 3}
   - {fileID: 7988907048659085410, guid: dd78d4b705a1c404683438e134d6b5d2, type: 3}
+  - {fileID: -5646241205445131177, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -1602551933919633800, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -8425991553857164477, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 1464655052439819841, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -5379136545246625322, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -687515453873094324, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 2546526889951604295, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 583657794823095887, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 4197618473826444142, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -2393192134150084939, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 748180398865806633, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: 4249941367048651443, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -1936583504859005472, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
+  - {fileID: -5943265840141121551, guid: a2b0843b4099af04486ecf022c98780e, type: 3}
   m_PackedSpriteNamesToIndex:
   - game2-tilemap 1_0
   - game2-tilemap 1_1
@@ -120,6 +135,20 @@ SpriteAtlas:
   - tilemap_3
   - tilemap_0
   - tilemap_1
+  - tilemap-desert_2
+  - tilemap-desert_3
+  - tilemap-desert_0
+  - tilemap-desert_1
+  - tilemap-desert_6
+  - tilemap-desert_7
+  - tilemap-desert_4
+  - tilemap-desert_5
+  - tilemap-desert_8
+  - tilemap-desert_9
+  - tilemap-desert_11
+  - tilemap-desert_10
+  - tilemap-desert_13
+  - tilemap-desert_12
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0

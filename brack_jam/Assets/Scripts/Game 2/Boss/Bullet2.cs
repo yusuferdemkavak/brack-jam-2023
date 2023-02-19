@@ -18,6 +18,7 @@ public class Bullet2 : MonoBehaviour
         if(hitInfo.gameObject.tag == "Player")
         {
             StartCoroutine(DestroyBullet2());
+            hitInfo.gameObject.GetComponent<PlayerHealth2>().TakeDamage(1f);
         }
     }
 
