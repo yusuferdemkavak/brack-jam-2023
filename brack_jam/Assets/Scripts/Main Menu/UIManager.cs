@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     public GameObject game1HTP;
     public GameObject game2HTP;
     public GameObject game3HTP;
+    public GameObject cloth1;
+    public GameObject cloth2;
 
     void Start()
     {
@@ -21,7 +23,15 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (PlayerPrefs.GetInt("Games Finished") == 1)
+        {
+            cloth1.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("Games Finished") == 2)
+        {
+            cloth1.SetActive(false);
+            cloth2.SetActive(false);
+        }
     }
 
     public void OnClickGame1()
@@ -81,5 +91,15 @@ public class UIManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(gameStartSound, Camera.main.transform.position);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void OnClickQuit()
+    {
+        Application.Quit();
+    } 
+
+    public void OnClickReset()
+    {
+        PlayerPrefs.SetInt("Games Finished", 0);
     }
 }

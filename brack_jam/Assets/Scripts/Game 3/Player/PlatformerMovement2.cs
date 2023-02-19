@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlatformerMovement2 : MonoBehaviour 
 {
-    public GameObject spawnPoint;
     public float moveSpeed;
     private float moveDirection;
     public Animator animator;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Raft : MonoBehaviour
 {
@@ -28,6 +29,14 @@ public class Raft : MonoBehaviour
         if (other.gameObject.tag == "Winner")
         {
             isOnRaft = true;
+            StartCoroutine(LoadScene("Main Menu"));
         }
+    }
+
+    public IEnumerator LoadScene(string sceneName)
+    {
+        PlayerPrefs.SetInt("Games Finished", PlayerPrefs.GetInt("Games Finished") + 1);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(sceneName);
     }
 }

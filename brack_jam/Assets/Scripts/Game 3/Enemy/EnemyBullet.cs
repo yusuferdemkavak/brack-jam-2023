@@ -2,35 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
-    public Enemy enemy;
-    public float speed = 7f;
+    public float speed = 10f;
     public Rigidbody2D rb;
-
     void Start()
     {
         rb.velocity = transform.right * speed;
         StartCoroutine(DestroyBullet());
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void Update()
     {
-        enemy = hitInfo.GetComponent<Enemy>();
-        Boss1 boss = hitInfo.GetComponent<Boss1>();
-        if (enemy != null)
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            enemy.TakeDamage(1);
+            collision.gameObject.GetComponent<PlayerHealth3>().TakeDamage(1);
             Destroy(gameObject);
         }
-
-        if (boss != null)
-        {
-            boss.TakeDamage(1);
-            Destroy(gameObject);
-        }
-
-        if(hitInfo.gameObject.tag == "Tree")
+        if (collision.gameObject.tag == "Box")
         {
             Destroy(gameObject);
         }

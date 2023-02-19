@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSwitcher : MonoBehaviour
 {
@@ -36,6 +37,12 @@ public class LevelSwitcher : MonoBehaviour
         if (level == 2)
         {
             boss.SetActive(true);
+        }
+
+        if (level == 3)
+        {
+            PlayerPrefs.SetInt("Games Finished", PlayerPrefs.GetInt("Games Finished") + 1);
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }

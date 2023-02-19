@@ -67,6 +67,7 @@ public class SpawnersManager : MonoBehaviour
                 boss.gameObject.SetActive(true);
                 BossHealthBar.SetActive(true);
                 Destroy(timerText);
+                Destroy(breakText);
                 for (int k = 0; k < spawners.Length/2; k++)
                 {
                     Destroy(spawners[k]);

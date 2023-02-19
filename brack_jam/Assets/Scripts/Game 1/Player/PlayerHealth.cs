@@ -7,7 +7,9 @@ public class PlayerHealth : MonoBehaviour
     public float health = 3f;
     public GameObject[] hearths;
     public GameObject spawnersManager;
+    public GameObject mainCamera;
     public GameObject deathScreen;
+    public AudioClip deathSound;
     public int damageTaken;
 
     void Start()
@@ -36,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
     {
         Destroy(spawnersManager);
         deathScreen.SetActive(true);
+        AudioSource.PlayClipAtPoint(deathSound, mainCamera.transform.position);
+        mainCamera.GetComponent<AudioSource>().enabled = false;
         Destroy(gameObject);
     }
 
